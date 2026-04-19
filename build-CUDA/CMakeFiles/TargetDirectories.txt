@@ -1,0 +1,3 @@
+/home/happikin/uni/semester-2/aspp/aspp-cw2/build-CUDA/CMakeFiles/awave.dir
+/home/happikin/uni/semester-2/aspp/aspp-cw2/build-CUDA/CMakeFiles/edit_cache.dir
+/home/happikin/uni/semester-2/aspp/aspp-cw2/build-CUDA/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,35 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  generateName: awave-a100-
+spec:
+  completions: 1
+  backoffLimit: 1
+  ttlSecondsAfterFinished: 1800
+  template:
+    metadata:
+      name: awave-a100-pod
+    spec:
+      activeDeadlineSeconds: 7200
+      containers:
+      - name: run
+        image: $container
+        command:
+          - bash
+          - -c
+          - >-
+            ${KGPU_SUBMIT_DIR}/build-CUDA/awave
+            -mpi 1,1,1 -shape 1024,1024,1024 -nsteps 100 -out_period 100
+            ${KGPU_JOB_NAME} > ${KGPU_JOB_NAME}.log 2>&1
+        resources:
+          requests:
+            cpu: 4
+            memory: 32Gi
+            nvidia.com/gpu: 1
+          limits:
+            cpu: 8
+            memory: 32Gi
+            nvidia.com/gpu: 1
+      restartPolicy: Never
+      nodeSelector:
+        nvidia.com/gpu.product: NVIDIA-A100-SXM4-80GB

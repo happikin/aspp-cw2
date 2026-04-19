@@ -1,0 +1,138 @@
+% Performance Programming Coursework 2 Report (Template)
+\documentclass[11pt]{article}
+
+\usepackage{sbc-template}
+\usepackage{graphicx,url}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{siunitx}
+\sloppy
+
+\title{Accelerated Systems Principles and Practice \\ Coursework 2}
+\author{B283069\inst{1}}
+\address{University of Edinburgh}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This report presents a CUDA implementation of the 3D wave-equation coursework application on single-node multi-GPU systems. The work focuses on correctness against the provided CPU reference and performance on A100 and H100 GPUs for problem sizes 256--2500 and device counts up to 8.
+\end{abstract}
+
+% NOTE: Keep report <= 5 pages, font size >= 10pt (already 11pt).
+% Required core sections from README are included below.
+
+\section{Design and Process}
+
+\subsection{Programming Model Choice}
+\textbf{Chosen model: CUDA.}
+State why CUDA was selected over OpenMP/SYCL for this submission.
+
+\subsection{Implementation Baseline}
+Summarise the baseline behavior inherited from the starter code:
+\begin{itemize}[leftmargin=*]
+\item MPI-based 3D decomposition with halo exchange.
+\item CPU reference and GPU run compared for correctness.
+\item Initial GPU backend state before your optimization work.
+\end{itemize}
+
+\subsection{Optimization Steps and Rationale}
+Document the optimization path as incremental stages. For each stage include: hypothesis, code change, correctness result, and timing impact.
+
+\paragraph{Stage 1: CUDA compute kernel}
+Describe first functional CUDA kernel for stencil+damping update.
+
+\paragraph{Stage 2: Halo-only communication path}
+Describe replacement of full-field host/device copies with halo-face-only packing, MPI exchange, and unpacking.
+
+\paragraph{Stage 3: Communication/computation overlap}
+Describe interior-vs-boundary kernel split and stream/event synchronization strategy.
+
+\subsection{Correctness Method}
+Describe how correctness was checked:
+\begin{itemize}[leftmargin=*]
+\item CPU vs GPU comparison (`Number of differences detected`).
+\item Multiple MPI layouts and domain shapes.
+\item Restart/checkpoint validation case.
+\end{itemize}
+
+\subsection{Experimental Method}
+State measurement setup:
+\begin{itemize}[leftmargin=*]
+\item Node/GPU type (A100 80GB, H100).
+\item Process layout(s) per device count.
+\item Number of repetitions and statistic used (min/mean/etc).
+\item I/O policy during timing runs.
+\end{itemize}
+
+\section{Results}
+
+% Required by README:
+% - both A100 80GB and H100
+% - device counts up to 8
+% - problem sizes 256..2500
+
+\subsection{Benchmark Matrix}
+\begin{table}[H]
+\centering
+\begin{tabular}{llll}
+\toprule
+GPU & Device count & Sizes tested & MPI layout(s) \\
+\midrule
+A100 80GB & 1,2,4,8 & 256..2500 & [fill] \\
+H100      & 1,2,4,8 & 256..2500 & [fill] \\
+\bottomrule
+\end{tabular}
+\caption{Benchmark coverage required by coursework brief.}
+\end{table}
+
+\subsection{Performance Plots}
+Insert figures for:
+\begin{itemize}[leftmargin=*]
+\item Throughput (site updates/s) vs size.
+\item Speedup vs device count.
+\item A100 vs H100 comparison at matched configurations.
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+% \includegraphics[width=0.8\linewidth]{figures/throughput_vs_size.pdf}
+\caption{Throughput versus problem size on A100 and H100 (placeholder).}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+% \includegraphics[width=0.8\linewidth]{figures/scaling_vs_devices.pdf}
+\caption{Scaling with number of GPUs up to 8 (placeholder).}
+\end{figure}
+
+\subsection{Discussion of Results}
+Discuss:
+\begin{itemize}[leftmargin=*]
+\item Scaling trends and bottlenecks (compute, communication, overlap efficacy).
+\item Difference between A100 and H100 behavior.
+\item Which optimization stage produced the largest gain and why.
+\item How close measured performance is to theoretical limits (memory bandwidth / FLOP context as appropriate).
+\end{itemize}
+
+\section{Further Work}
+Estimate multi-node scaling behavior and changes needed for efficient execution across hundreds of nodes / thousands of GPUs. Address:
+\begin{itemize}[leftmargin=*]
+\item Inter-node communication costs and expected scaling limits.
+\item Overlap and message aggregation strategies.
+\item Potential use of CUDA-aware MPI or GPUDirect paths.
+\item Domain decomposition and load-balance considerations at scale.
+\end{itemize}
+
+% Keep references for any external sources, tools, or documentation used.
+\begin{thebibliography}{9}
+\bibitem{cuda-docs}
+NVIDIA CUDA Documentation, \url{https://docs.nvidia.com/cuda/}.
+\end{thebibliography}
+
+\end{document}
