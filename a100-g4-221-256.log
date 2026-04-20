@@ -1,0 +1,81 @@
+=== shape 1024^3 on 4 GPUs ===
+ASPP wave simulator starting
+Process geometry: [2, 2, 1]
+Initialising CPU simulation from parameters...
+Grid shape: [256, 256, 256]
+Grid spacing: 10 m
+Time step: 0.002 s
+Number of steps: 100
+Output period: 10
+Initial pressure field is pulse in middle of domain
+Speed of sound is simple ocean depth model
+Damping field to avoid reflections in x & y directions (large quiet ocean)
+IO off, skipping
+Initialising CUDA simulation as copy of CPU...
+IO off, skipping
+Starting run with CPU, timing in 10 chunks
+Chunk 0, length = 10, time = 0.12703395 s
+Chunk 1, length = 10, time = 0.1223582 s
+Chunk 2, length = 10, time = 0.122010484 s
+Chunk 3, length = 10, time = 0.12188569 s
+Chunk 4, length = 10, time = 0.12229384 s
+Chunk 5, length = 10, time = 0.12163539 s
+Chunk 6, length = 10, time = 0.12193155 s
+Chunk 7, length = 10, time = 0.11993095 s
+Chunk 8, length = 10, time = 0.12091006 s
+Chunk 9, length = 10, time = 0.120460995 s
+Starting run with CUDA, timing in 10 chunks
+Chunk 0, length = 10, time = 0.020938333 s
+Chunk 1, length = 10, time = 0.021757832 s
+Chunk 2, length = 10, time = 0.021098876 s
+Chunk 3, length = 10, time = 0.020827675 s
+Chunk 4, length = 10, time = 0.021805624 s
+Chunk 5, length = 10, time = 0.020927954 s
+Chunk 6, length = 10, time = 0.020149423 s
+Chunk 7, length = 10, time = 0.021323347 s
+Chunk 8, length = 10, time = 0.020665033 s
+Chunk 9, length = 10, time = 0.020518556 s
+Checking CUDA results...
+Number of differences detected = 0
+Summary for CPU
+Run time / seconds
+min = 1.199e-01, max = 1.270e-01, mean = 1.220e-01, std = 1.931e-03
+Performance / (site updates per second)
+min = 1.321e+09, max = 1.399e+09, mean = 1.375e+09, std = 2.120e+07
+Summary for CUDA
+Run time / seconds
+min = 2.015e-02, max = 2.180e-02, mean = 2.100e-02, std = 5.210e-04
+Performance / (site updates per second)
+min = 7.694e+09, max = 8.327e+09, mean = 7.994e+09, std = 1.977e+08
+Mon Apr 20 15:41:38 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.124.06             Driver Version: 570.124.06     CUDA Version: 13.0     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-80GB          Off |   00000000:05:00.0 Off |                    0 |
+| N/A   32C    P0             84W /  400W |       1MiB /  81920MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA A100-SXM4-80GB          Off |   00000000:06:00.0 Off |                    0 |
+| N/A   36C    P0            110W /  400W |       1MiB /  81920MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA A100-SXM4-80GB          Off |   00000000:07:00.0 Off |                    0 |
+| N/A   32C    P0             82W /  400W |       1MiB /  81920MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA A100-SXM4-80GB          Off |   00000000:08:00.0 Off |                    0 |
+| N/A   36C    P0            115W /  400W |       1MiB /  81920MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
