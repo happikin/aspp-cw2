@@ -31,43 +31,52 @@ This report presents a CUDA implementation of the 3D wave-equation coursework ap
 
 \subsection{Programming Model Choice}
 \textbf{Chosen model: CUDA.}
-State why CUDA was selected over OpenMP/SYCL for this submission.
+The submission uses CUDA because it gives direct control of device memory, kernel launch configuration, and synchronization primitives needed for optimizing stencil updates and halo exchange behavior. The codebase already has a clear MPI decomposition structure, so CUDA integration at rank level is straightforward: each MPI rank owns one local subdomain and executes device work for that subdomain.
+
+OpenMP target offloading was considered, but it is less coherent with the optimization goals of this MPI-decomposed code. In this coursework, performance is strongly affected by how device-side buffers are managed around halo exchange and by how communication/computation overlap is orchestrated. CUDA exposes these mechanisms explicitly (streams, events, device allocations, asynchronous copies), while OpenMP offloading tends to hide more of the runtime behavior behind directives. For this project, that reduced explicit control is a disadvantage because the bottlenecks are communication-path details rather than simple loop parallelism.
+
+SYCL was also considered, but the coursework target is specific NVIDIA hardware (A100/H100) rather than portability across vendors. Since the objective is to maximize node performance on a known platform, hardware-agnostic abstractions are less valuable than direct platform-specific control. In this context, CUDA better matches the purpose of the assignment: optimize for a fixed NVIDIA environment instead of prioritizing cross-vendor portability.
 
 \subsection{Implementation Baseline}
-Summarize the baseline behavior inherited from the starter code:
+The provided starter structure is MPI-first and uses domain decomposition with halo exchange on every timestep:
 \begin{itemize}[leftmargin=*]
-\item MPI-based 3D decomposition with halo exchange.
-\item CPU reference and GPU run compared for correctness.
-\item Initial GPU backend state before your optimization work.
+\item 3D process grid (`-mpi px,py,pz`) determines local subdomains.
+\item CPU and GPU implementations are executed and compared for correctness (`Number of differences detected`).
+\item Initial GPU backend was effectively CPU-style logic and did not exploit device-side communication/computation structure.
 \end{itemize}
 
 \subsection{Optimization Steps and Rationale}
-Document the optimization path as incremental stages. For each stage include: hypothesis, code change, correctness result, and timing impact.
+The implementation was developed incrementally with correctness checks after each step.
 
 \paragraph{Stage 1: CUDA compute kernel}
-Describe first functional CUDA kernel for stencil+damping update.
+The first target was to move the dominant arithmetic work (7-point stencil + damping update) from CPU loops into a single CUDA kernel operating on rank-local data. The objective was to establish a correct device execution path while preserving the original timestep ordering (`halo exchange \(\rightarrow\) update \(\rightarrow\) advance`). At this stage, MPI decomposition, data layout, and host-side halo orchestration were intentionally left unchanged to reduce integration risk. This created a clean baseline for later optimization: functional CUDA execution with minimal algorithmic change.
 
 \paragraph{Stage 2: Halo-only communication path}
-Describe replacement of full-field host/device copies with halo-face-only packing, MPI exchange, and unpacking.
+After Stage 1, profiling showed that communication-related transfers dominated runtime because the whole active field was copied device$\leftrightarrow$host each timestep to perform MPI halo exchange. The main design decision in Stage 2 was to reduce transfer volume to the true communication requirement: only the six boundary faces. This was implemented with CUDA face pack/unpack kernels and pinned host buffers for host-side MPI exchange. In effect, each timestep transfers halo faces only, instead of full 3D arrays, reducing PCIe traffic and improving device utilization. Correctness remained unchanged because the numerical update formula and halo semantics were preserved.
 
 \paragraph{Stage 3: Communication/computation overlap}
-Describe interior-vs-boundary kernel split and stream/event synchronization strategy.
+Stage 3 targeted latency hiding rather than data-volume reduction. The local domain update was split into two kernels:
+\begin{itemize}[leftmargin=*]
+\item an \emph{interior} kernel for points that do not depend on freshly received halos,
+\item a \emph{boundary} kernel for points adjacent to process boundaries.
+\end{itemize}
+Halo exchange was executed on a communication stream while interior work executed on a compute stream. A CUDA event was used to synchronize only the boundary phase with halo completion. The rationale is that interior arithmetic can proceed concurrently with communication, so end-to-end timestep time approaches `max(interior compute, halo exchange) + boundary compute` instead of a fully serialized sum. This stage improved strong-scaling behavior by reducing visible communication overhead per timestep.
 
 \subsection{Correctness Method}
-Describe how correctness was checked:
+Correctness was validated using the built-in CPU reference comparison:
 \begin{itemize}[leftmargin=*]
-\item CPU vs GPU comparison (`Number of differences detected`).
-\item Multiple MPI layouts and domain shapes.
-\item Restart/checkpoint validation case.
+\item `Number of differences detected = 0` was required for acceptance.
+\item Validation was performed across multiple process layouts (`1,1,1`, `2,1,1`, `2,2,1`, `1,2,2`) and multiple shape sizes.
+\item Restart/checkpoint paths were also tested during development.
 \end{itemize}
 
 \subsection{Experimental Method}
-State measurement setup:
+Current measurements were collected with one timing chunk (\texttt{-nsteps 100 -out\_period 100}) so runtime equals a single 100-step interval. The same command format was used per case except where infrastructure constraints forced MPI transport changes.
 \begin{itemize}[leftmargin=*]
-\item Node/GPU type (A100 80GB, H100).
-\item Process layout(s) per device count.
-\item Number of repetitions and statistic used (min/mean/etc).
-\item I/O policy during timing runs.
+\item GPU platform currently measured: A100 80GB.
+\item Process layouts used: `1,1,1` (1 rank/GPU) and `2,2,1` (4 ranks/GPUs).
+\item IO disabled during timing (`-io` default off).
+\item CPU+GPU comparison mode used for the runs listed in this draft section.
 \end{itemize}
 
 \section{Results}
@@ -77,48 +86,94 @@ State measurement setup:
 % - device counts up to 8
 % - problem sizes 256..2500
 
-\subsection{Benchmark Matrix}
+\subsection{A100 Results (from \texttt{A100-Benchmarks.csv})}
 \begin{table}[H]
 \centering
-\begin{tabular}{llll}
+\scriptsize
+\begin{tabular}{ccccc}
 \toprule
-GPU & Device count & Sizes tested & MPI layout(s) \\
+GPUs & Shape & CPU time (s) & CUDA time (s) & GPU/CPU speedup \\
 \midrule
-A100 80GB & 1,2,4,8 & 256..2500 & [fill] \\
-H100      & 1,2,4,8 & 256..2500 & [fill] \\
+1 & 128$^3$  & 5.157e-02 & 4.241e-03 & 12.16$\times$ \\
+1 & 256$^3$  & 4.504e-01 & 4.223e-02 & 10.67$\times$ \\
+1 & 512$^3$  & 3.261e+00 & 3.457e-01 & 9.43$\times$ \\
+1 & 1024$^3$ & 2.127e+01 & 2.814e+00 & 7.56$\times$ \\
+2 & 128$^3$  & 2.182e-02 & 3.434e-03 & 6.35$\times$ \\
+2 & 256$^3$  & 2.064e-01 & 2.272e-02 & 9.08$\times$ \\
+2 & 512$^3$  & 1.783e+00 & 2.062e-01 & 8.65$\times$ \\
+2 & 1024$^3$ & 1.406e+01 & 1.591e+00 & 8.84$\times$ \\
+4 & 128$^3$  & 8.772e-03 & 3.109e-03 & 2.82$\times$ \\
+4 & 256$^3$  & 1.199e-01 & 2.015e-02 & 5.95$\times$ \\
+4 & 512$^3$  & 9.719e-01 & 1.670e-01 & 5.82$\times$ \\
+4 & 1024$^3$ & 8.015e+00 & 1.237e+00 & 6.48$\times$ \\
 \bottomrule
 \end{tabular}
-\caption{Benchmark coverage required by coursework brief.}
+\caption{A100 benchmark summary extracted from \texttt{A100-Benchmarks.csv}.}
 \end{table}
 
-\subsection{Performance Plots}
-Insert figures for:
-\begin{itemize}[leftmargin=*]
-\item Throughput (site updates/s) vs size.
-\item Speedup vs device count.
-\item A100 vs H100 comparison at matched configurations.
-\end{itemize}
-
-\begin{figure}[H]
+\subsection{H100 Results (from \texttt{H100-Benchmarks.csv})}
+\begin{table}[H]
 \centering
-% \includegraphics[width=0.8\linewidth]{figures/throughput_vs_size.pdf}
-\caption{Throughput versus problem size on A100 and H100 (placeholder).}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-% \includegraphics[width=0.8\linewidth]{figures/scaling_vs_devices.pdf}
-\caption{Scaling with number of GPUs up to 8 (placeholder).}
-\end{figure}
+\scriptsize
+\begin{tabular}{ccccc}
+\toprule
+GPUs & Shape & CPU time (s) & CUDA time (s) & GPU/CPU speedup \\
+\midrule
+1 & 128$^3$  & 4.669e-02 & 3.244e-03 & 14.39$\times$ \\
+1 & 256$^3$  & 8.434e-01 & 4.888e-02 & 17.25$\times$ \\
+1 & 512$^3$  & 5.521e+01 & 2.488e+00 & 22.19$\times$ \\
+2 & 128$^3$  & 2.047e-02 & 2.299e-03 & 8.90$\times$ \\
+2 & 256$^3$  & 4.249e-01 & 2.370e-02 & 17.93$\times$ \\
+2 & 512$^3$  & 3.825e+00 & 2.213e-01 & 17.28$\times$ \\
+2 & 1024$^3$ & 3.234e+01 & 1.730e+00 & 18.69$\times$ \\
+4 & 128$^3$  & 9.633e-03 & 1.836e-03 & 5.25$\times$ \\
+4 & 256$^3$  & 1.569e-01 & 1.092e-02 & 14.37$\times$ \\
+4 & 512$^3$  & 1.547e+00 & 8.904e-02 & 17.37$\times$ \\
+4 & 1024$^3$ & 1.319e+01 & 7.629e-01 & 17.29$\times$ \\
+\bottomrule
+\end{tabular}
+\caption{H100 benchmark summary extracted from \texttt{H100-Benchmarks.csv}.}
+\end{table}
 
 \subsection{Discussion of Results}
-Discuss:
 \begin{itemize}[leftmargin=*]
-\item Scaling trends and bottlenecks (compute, communication, overlap efficacy).
-\item Difference between A100 and H100 behavior.
-\item Which optimization stage produced the largest gain and why.
-\item How close measured performance is to theoretical limits (memory bandwidth / FLOP context as appropriate).
+\item All listed runs achieved zero differences against CPU reference.
+\item CUDA outperforms CPU in all measured cases.
+\item From \texttt{A100-Benchmarks.csv}, GPU-over-CPU speedup ranges from 2.82$\times$ to 12.16$\times$.
+\item From \texttt{H100-Benchmarks.csv}, GPU-over-CPU speedup ranges from 5.25$\times$ to 22.19$\times$.
+\item At fixed GPU count, speedup generally increases with problem size, consistent with better amortization of communication and launch overheads as per-rank workload increases.
+\item A preliminary 8-GPU run required different MPI transport flags because of UCX shared-memory allocation issues. For fair scaling comparisons, 8-GPU data will be regenerated using consistent runtime configuration after infrastructure adjustments.
 \end{itemize}
+
+The tables above are the current consolidated baseline used for the performance analysis plots.
+
+\subsection{Performance Graphs}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\linewidth]{../plots/selected/speedup_vs_cpu.png}
+\caption{GPU-over-CPU speedup versus problem size for A100 and H100, grouped by GPU count.}
+\end{figure}
+
+\paragraph{Interpretation (Speedup vs CPU).}
+Both platforms show clear acceleration over CPU across all measured cases. Speedup generally increases with problem size because kernel launch and communication overheads become a smaller fraction of total timestep cost as arithmetic intensity rises. H100 tends to show stronger speedup at larger cases due to higher memory bandwidth and higher aggregate device throughput. Lower speedups at small shapes, especially at higher GPU counts, are expected: communication and synchronization overheads are proportionally larger when per-rank workloads are small.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\linewidth]{../plots/selected/strong_scaling.png}
+\caption{Strong-scaling speedup (relative to $g=1$) for $g=1,2,4$ on A100 and H100.}
+\end{figure}
+
+\paragraph{Interpretation (Strong Scaling).}
+Strong-scaling speedup improves as shape increases, because larger fixed problems provide enough local work per rank to amortize halo exchange and MPI synchronization costs. For smaller shapes, scaling is sub-linear as expected for stencil applications with nearest-neighbor communication. In a finite-volume stencil update, communication volume scales with surface area while useful computation scales with volume; therefore, decomposition efficiency improves with larger local domains and degrades when each rank owns too small a block.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\linewidth]{../plots/selected/parallel_efficiency.png}
+\caption{Parallel efficiency for $g=2$ and $g=4$ derived from strong-scaling runs.}
+\end{figure}
+
+\paragraph{Interpretation (Parallel Efficiency).}
+Efficiency decreases when increasing GPU count at fixed shape, consistent with communication and synchronization overhead growth relative to per-rank compute. Efficiency is higher for larger shapes because each rank has more interior points, improving the compute/communication balance. The remaining spread between curves likely reflects runtime-system effects (scheduler placement, MPI transport behavior, and node-level contention), which is typical in shared production environments. Final conclusions should use repeat runs and consistent runtime flags, especially once 8-GPU measurements are completed.
 
 \section{Further Work}
 Estimate multi-node scaling behavior and changes needed for efficient execution across hundreds of nodes / thousands of GPUs. Address:

@@ -6,18 +6,24 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Programming Model Choice}{1}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Implementation Baseline}{1}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.3}Optimization Steps and Rationale}{1}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Stage 1: CUDA compute kernel}{1}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Stage 2: Halo-only communication path}{1}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Stage 3: Communication/computation overlap}{1}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.4}Correctness Method}{1}{}\protected@file@percent }
-\bibcite{cuda-docs}{1}
+\@writefile{toc}{\contentsline {paragraph}{Stage 1: CUDA compute kernel}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Stage 2: Halo-only communication path}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Stage 3: Communication/computation overlap}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4}Correctness Method}{2}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.5}Experimental Method}{2}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2}Results}{2}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Benchmark Matrix}{2}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Benchmark coverage required by coursework brief.}}{2}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Performance Plots}{2}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Throughput versus problem size on A100 and H100 (placeholder).}}{2}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Scaling with number of GPUs up to 8 (placeholder).}}{2}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Discussion of Results}{2}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3}Further Work}{2}{}\protected@file@percent }
-\gdef \@abspage@last{2}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Results}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}A100 Results (from \texttt  {A100-Benchmarks.csv})}{3}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces A100 benchmark summary extracted from \texttt  {A100-Benchmarks.csv}.}}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}H100 Results (from \texttt  {H100-Benchmarks.csv})}{3}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces H100 benchmark summary extracted from \texttt  {H100-Benchmarks.csv}.}}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Discussion of Results}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Performance Graphs}{4}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces GPU-over-CPU speedup versus problem size for A100 and H100, grouped by GPU count.}}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Interpretation (Speedup vs CPU).}{4}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Strong-scaling speedup (relative to $g=1$) for $g=1,2,4$ on A100 and H100.}}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Interpretation (Strong Scaling).}{4}{}\protected@file@percent }
+\bibcite{cuda-docs}{1}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Parallel efficiency for $g=2$ and $g=4$ derived from strong-scaling runs.}}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Interpretation (Parallel Efficiency).}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Further Work}{5}{}\protected@file@percent }
+\gdef \@abspage@last{5}
