@@ -4,43 +4,34 @@ metadata:
   generateName: awave-h100-n2500-g8-
 spec:
   completions: 1
-  backoffLimit: 0
+  backoffLimit: 1
   ttlSecondsAfterFinished: 1800
   template:
     metadata:
-      name: awave-h100-pod
-      labels:
-        kueue.x-k8s.io/max-exec-time-seconds: "7200"
-        kueue.x-k8s.io/queue-name: eidf018ns-profiling-queue
+      name: awave-pod
     spec:
-      activeDeadlineSeconds: 7200
-      restartPolicy: Never
-      volumes:
-        - name: dshm
-          emptyDir:
-            medium: Memory
-            sizeLimit: 32Gi
+      activeDeadlineSeconds: 1800
       containers:
-        - name: run
-          image: $container
-          resources:
-            requests:
-              cpu: 16
-              memory: 180Gi
-              nvidia.com/gpu: 8
-            limits:
-              cpu: 16
-              memory: 180Gi
-              nvidia.com/gpu: 8
-          volumeMounts:
-            - name: dshm
-              mountPath: /dev/shm
-          command: ["bash", "-c"]
-          args:
-            - |-
-              set -euo pipefail
-              cd ${KGPU_SUBMIT_DIR}
-              mkdir -p results/h100/g8
-              mpirun -n 8 -mca coll ^hcoll ./build-CUDA/awave -mpi 2,2,2 -shape 2500,2500,2500 -nsteps 100 -out_period 100 -skip_cpu 1 -json results/h100/g8/n2500_g8.json ${KGPU_JOB_NAME} 2>&1 | tee results/h100/g8/n2500_g8.log
+      - name: run
+        image: $container
+        command:
+          - bash
+          - -c
+          - |
+            exec > >(tee "${KGPU_SUBMIT_DIR}/${KGPU_JOB_NAME}.log") 2>&1
+            set -e
+            mkdir -p "${KGPU_SUBMIT_DIR}/results/h100/g8"
+            echo "=== shape 2500^3 on 8 GPUs (H100) ==="
+            mpirun -np 8 -mca coll ^hcoll               "${KGPU_SUBMIT_DIR}/build-CUDA/awave"               -mpi 2,2,2 -shape 2500,2500,2500 -nsteps 100 -out_period 100 -skip_cpu 1               -json "${KGPU_SUBMIT_DIR}/results/h100/g8/n2500_g8.json"               "${KGPU_JOB_NAME}"
+        resources:
+          requests:
+            cpu: 16
+            memory: 180Gi
+            nvidia.com/gpu: 8
+          limits:
+            cpu: 16
+            memory: 180Gi
+            nvidia.com/gpu: 8
+      restartPolicy: Never
       nodeSelector:
         nvidia.com/gpu.product: NVIDIA-H100-80GB-HBM3

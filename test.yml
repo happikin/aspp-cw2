@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  generateName: awave-h100-n2048-g4-
+  generateName: awave-
 spec:
   completions: 1
   backoffLimit: 1
@@ -18,11 +18,14 @@ spec:
           - bash
           - -c
           - |
-            exec > >(tee "${KGPU_SUBMIT_DIR}/${KGPU_JOB_NAME}.log") 2>&1
+            exec > >(tee "$(KGPU_SUBMIT_DIR)/$(KGPU_JOB_NAME).log") 2>&1
             set -e
-            mkdir -p "${KGPU_SUBMIT_DIR}/results/h100/g4"
-            echo "=== shape 2048^3 on 4 GPUs (H100) ==="
-            mpirun -np 4 -mca coll ^hcoll               "${KGPU_SUBMIT_DIR}/build-CUDA/awave"               -mpi 2,2,1 -shape 2048,2048,2048 -nsteps 100 -out_period 100 -skip_cpu 1               -json "${KGPU_SUBMIT_DIR}/results/h100/g4/n2048_g4.json"               "${KGPU_JOB_NAME}"
+            echo "=== shape 1024^3 on 4 GPUs ==="
+            mpirun -np 4 -mca coll ^hcoll \
+              "$(KGPU_SUBMIT_DIR)/build-CUDA/awave" \
+              -mpi 2,2,1 -shape 512,512,512 \
+              -json "$(KGPU_SUBMIT_DIR)/$(KGPU_JOB_NAME).json" \
+              "$(KGPU_JOB_NAME)"
         resources:
           requests:
             cpu: 8
@@ -34,4 +37,4 @@ spec:
             nvidia.com/gpu: 4
       restartPolicy: Never
       nodeSelector:
-        nvidia.com/gpu.product: NVIDIA-H100-80GB-HBM3
+        nvidia.com/gpu.product: NVIDIA-A100-SXM4-80GB
