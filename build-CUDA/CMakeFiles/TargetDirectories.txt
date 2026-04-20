@@ -1,3 +1,3 @@
-/home/happikin/uni/semester-2/aspp/aspp-cw2/build-CUDA/CMakeFiles/awave.dir
-/home/happikin/uni/semester-2/aspp/aspp-cw2/build-CUDA/CMakeFiles/edit_cache.dir
-/home/happikin/uni/semester-2/aspp/aspp-cw2/build-CUDA/CMakeFiles/rebuild_cache.dir
+/home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/build-CUDA/CMakeFiles/awave.dir
+/home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/build-CUDA/CMakeFiles/edit_cache.dir
+/home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/build-CUDA/CMakeFiles/rebuild_cache.dir

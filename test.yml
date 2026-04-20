@@ -23,18 +23,18 @@ spec:
             echo "=== shape 1024^3 on 4 GPUs ==="
             mpirun -np 8 -mca coll ^hcoll \
               "$(KGPU_SUBMIT_DIR)/build-CUDA/awave" \
-              -mpi 2,2,2 -shape 1024,1024,1024 \
+              -mpi 2,2,2 -shape 128,128,128 \
               "$(KGPU_JOB_NAME)" \
             && nvidia-smi
         resources:
           requests:
             cpu: 8
-            memory: 256Gi
+            memory: 64Gi
             nvidia.com/gpu: 8
           limits:
             cpu: 8
-            memory: 256Gi
+            memory: 64Gi
             nvidia.com/gpu: 8
       restartPolicy: Never
       nodeSelector:
-        nvidia.com/gpu.product: NVIDIA-H100-80GB-HBM3
+        nvidia.com/gpu.product: NVIDIA-A100-SXM4-80GB

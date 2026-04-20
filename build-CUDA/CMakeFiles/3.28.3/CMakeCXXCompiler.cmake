@@ -1,7 +1,7 @@
-set(CMAKE_CXX_COMPILER "/opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/bin/nvc++")
+set(CMAKE_CXX_COMPILER "/opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/bin/nvc++")
 set(CMAKE_CXX_COMPILER_ARG1 "")
 set(CMAKE_CXX_COMPILER_ID "NVHPC")
-set(CMAKE_CXX_COMPILER_VERSION "25.11.0")
+set(CMAKE_CXX_COMPILER_VERSION "25.9.0")
 set(CMAKE_CXX_COMPILER_VERSION_INTERNAL "")
 set(CMAKE_CXX_COMPILER_WRAPPER "")
 set(CMAKE_CXX_STANDARD_COMPUTED_DEFAULT "17")
@@ -80,6 +80,6 @@ endif()
 
 
 set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES "/usr/include")
-set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "nvhpcatm;stdc++;nvomp;dl;nvhpcatm;atomic;pthread;nvcpumath-avx512;nsnvc;nvc;gcc;c;gcc_s;m")
-set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "/opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/lib;/usr/lib/x86_64-linux-gnu;/usr/lib/gcc/x86_64-linux-gnu/13;/usr/lib64")
+set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "nvhpcatm;stdc++;nvomp;dl;nvhpcatm;atomic;pthread;nvcpumath;nsnvc;nvc;gcc;c;gcc_s;m")
+set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "/opt/nvidia/hpc_sdk/Linux_x86_64/25.9/comm_libs/13.0/hpcx/hpcx-2.24/nccl_rdma_sharp_plugin/lib;/opt/nvidia/hpc_sdk/Linux_x86_64/25.9/comm_libs/13.0/hpcx/hpcx-2.24/ncclnet_plugin/lib;/opt/nvidia/hpc_sdk/Linux_x86_64/25.9/comm_libs/13.0/hpcx/hpcx-2.24/sharp/lib;/opt/nvidia/hpc_sdk/Linux_x86_64/25.9/comm_libs/13.0/hpcx/hpcx-2.24/ucc/lib;/opt/nvidia/hpc_sdk/Linux_x86_64/25.9/comm_libs/13.0/hpcx/hpcx-2.24/ucx/lib;/opt/nvidia/hpc_sdk/Linux_x86_64/25.9/comm_libs/13.0/hpcx/hpcx-2.24/hcoll/lib;/opt/nvidia/hpc_sdk/Linux_x86_64/25.9/comm_libs/13.0/hpcx/hpcx-2.24/ompi/lib;/opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/lib;/usr/lib/gcc/x86_64-linux-gnu/13;/usr/lib64")
 set(CMAKE_CXX_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")

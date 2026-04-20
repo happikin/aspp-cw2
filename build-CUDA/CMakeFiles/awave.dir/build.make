@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/happikin/uni/semester-2/aspp/aspp-cw2/src
+CMAKE_SOURCE_DIR = /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/happikin/uni/semester-2/aspp/aspp-cw2/build-CUDA
+CMAKE_BINARY_DIR = /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/build-CUDA
 
 # Include any dependencies generated for this target.
 include CMakeFiles/awave.dir/depend.make
@@ -70,81 +70,81 @@ include CMakeFiles/awave.dir/progress.make
 include CMakeFiles/awave.dir/flags.make
 
 CMakeFiles/awave.dir/h5io.cpp.o: CMakeFiles/awave.dir/flags.make
-CMakeFiles/awave.dir/h5io.cpp.o: /home/happikin/uni/semester-2/aspp/aspp-cw2/src/h5io.cpp
+CMakeFiles/awave.dir/h5io.cpp.o: /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/h5io.cpp
 CMakeFiles/awave.dir/h5io.cpp.o: CMakeFiles/awave.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/happikin/uni/semester-2/aspp/aspp-cw2/build-CUDA/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/awave.dir/h5io.cpp.o"
-	/opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/bin/nvc++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/awave.dir/h5io.cpp.o -MF CMakeFiles/awave.dir/h5io.cpp.o.d -o CMakeFiles/awave.dir/h5io.cpp.o -c /home/happikin/uni/semester-2/aspp/aspp-cw2/src/h5io.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/build-CUDA/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/awave.dir/h5io.cpp.o"
+	/opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/bin/nvc++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/awave.dir/h5io.cpp.o -MF CMakeFiles/awave.dir/h5io.cpp.o.d -o CMakeFiles/awave.dir/h5io.cpp.o -c /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/h5io.cpp
 
 CMakeFiles/awave.dir/h5io.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/awave.dir/h5io.cpp.i"
-	/opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/bin/nvc++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/happikin/uni/semester-2/aspp/aspp-cw2/src/h5io.cpp > CMakeFiles/awave.dir/h5io.cpp.i
+	/opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/bin/nvc++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/h5io.cpp > CMakeFiles/awave.dir/h5io.cpp.i
 
 CMakeFiles/awave.dir/h5io.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/awave.dir/h5io.cpp.s"
-	/opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/bin/nvc++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/happikin/uni/semester-2/aspp/aspp-cw2/src/h5io.cpp -o CMakeFiles/awave.dir/h5io.cpp.s
+	/opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/bin/nvc++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/h5io.cpp -o CMakeFiles/awave.dir/h5io.cpp.s
 
 CMakeFiles/awave.dir/parallel.cpp.o: CMakeFiles/awave.dir/flags.make
-CMakeFiles/awave.dir/parallel.cpp.o: /home/happikin/uni/semester-2/aspp/aspp-cw2/src/parallel.cpp
+CMakeFiles/awave.dir/parallel.cpp.o: /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/parallel.cpp
 CMakeFiles/awave.dir/parallel.cpp.o: CMakeFiles/awave.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/happikin/uni/semester-2/aspp/aspp-cw2/build-CUDA/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/awave.dir/parallel.cpp.o"
-	/opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/bin/nvc++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/awave.dir/parallel.cpp.o -MF CMakeFiles/awave.dir/parallel.cpp.o.d -o CMakeFiles/awave.dir/parallel.cpp.o -c /home/happikin/uni/semester-2/aspp/aspp-cw2/src/parallel.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/build-CUDA/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/awave.dir/parallel.cpp.o"
+	/opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/bin/nvc++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/awave.dir/parallel.cpp.o -MF CMakeFiles/awave.dir/parallel.cpp.o.d -o CMakeFiles/awave.dir/parallel.cpp.o -c /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/parallel.cpp
 
 CMakeFiles/awave.dir/parallel.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/awave.dir/parallel.cpp.i"
-	/opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/bin/nvc++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/happikin/uni/semester-2/aspp/aspp-cw2/src/parallel.cpp > CMakeFiles/awave.dir/parallel.cpp.i
+	/opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/bin/nvc++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/parallel.cpp > CMakeFiles/awave.dir/parallel.cpp.i
 
 CMakeFiles/awave.dir/parallel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/awave.dir/parallel.cpp.s"
-	/opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/bin/nvc++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/happikin/uni/semester-2/aspp/aspp-cw2/src/parallel.cpp -o CMakeFiles/awave.dir/parallel.cpp.s
+	/opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/bin/nvc++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/parallel.cpp -o CMakeFiles/awave.dir/parallel.cpp.s
 
 CMakeFiles/awave.dir/init_sos.cpp.o: CMakeFiles/awave.dir/flags.make
-CMakeFiles/awave.dir/init_sos.cpp.o: /home/happikin/uni/semester-2/aspp/aspp-cw2/src/init_sos.cpp
+CMakeFiles/awave.dir/init_sos.cpp.o: /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/init_sos.cpp
 CMakeFiles/awave.dir/init_sos.cpp.o: CMakeFiles/awave.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/happikin/uni/semester-2/aspp/aspp-cw2/build-CUDA/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/awave.dir/init_sos.cpp.o"
-	/opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/bin/nvc++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/awave.dir/init_sos.cpp.o -MF CMakeFiles/awave.dir/init_sos.cpp.o.d -o CMakeFiles/awave.dir/init_sos.cpp.o -c /home/happikin/uni/semester-2/aspp/aspp-cw2/src/init_sos.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/build-CUDA/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/awave.dir/init_sos.cpp.o"
+	/opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/bin/nvc++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/awave.dir/init_sos.cpp.o -MF CMakeFiles/awave.dir/init_sos.cpp.o.d -o CMakeFiles/awave.dir/init_sos.cpp.o -c /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/init_sos.cpp
 
 CMakeFiles/awave.dir/init_sos.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/awave.dir/init_sos.cpp.i"
-	/opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/bin/nvc++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/happikin/uni/semester-2/aspp/aspp-cw2/src/init_sos.cpp > CMakeFiles/awave.dir/init_sos.cpp.i
+	/opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/bin/nvc++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/init_sos.cpp > CMakeFiles/awave.dir/init_sos.cpp.i
 
 CMakeFiles/awave.dir/init_sos.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/awave.dir/init_sos.cpp.s"
-	/opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/bin/nvc++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/happikin/uni/semester-2/aspp/aspp-cw2/src/init_sos.cpp -o CMakeFiles/awave.dir/init_sos.cpp.s
+	/opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/bin/nvc++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/init_sos.cpp -o CMakeFiles/awave.dir/init_sos.cpp.s
 
 CMakeFiles/awave.dir/ufield.cpp.o: CMakeFiles/awave.dir/flags.make
-CMakeFiles/awave.dir/ufield.cpp.o: /home/happikin/uni/semester-2/aspp/aspp-cw2/src/ufield.cpp
+CMakeFiles/awave.dir/ufield.cpp.o: /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/ufield.cpp
 CMakeFiles/awave.dir/ufield.cpp.o: CMakeFiles/awave.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/happikin/uni/semester-2/aspp/aspp-cw2/build-CUDA/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/awave.dir/ufield.cpp.o"
-	/opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/bin/nvc++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/awave.dir/ufield.cpp.o -MF CMakeFiles/awave.dir/ufield.cpp.o.d -o CMakeFiles/awave.dir/ufield.cpp.o -c /home/happikin/uni/semester-2/aspp/aspp-cw2/src/ufield.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/build-CUDA/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/awave.dir/ufield.cpp.o"
+	/opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/bin/nvc++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/awave.dir/ufield.cpp.o -MF CMakeFiles/awave.dir/ufield.cpp.o.d -o CMakeFiles/awave.dir/ufield.cpp.o -c /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/ufield.cpp
 
 CMakeFiles/awave.dir/ufield.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/awave.dir/ufield.cpp.i"
-	/opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/bin/nvc++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/happikin/uni/semester-2/aspp/aspp-cw2/src/ufield.cpp > CMakeFiles/awave.dir/ufield.cpp.i
+	/opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/bin/nvc++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/ufield.cpp > CMakeFiles/awave.dir/ufield.cpp.i
 
 CMakeFiles/awave.dir/ufield.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/awave.dir/ufield.cpp.s"
-	/opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/bin/nvc++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/happikin/uni/semester-2/aspp/aspp-cw2/src/ufield.cpp -o CMakeFiles/awave.dir/ufield.cpp.s
+	/opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/bin/nvc++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/ufield.cpp -o CMakeFiles/awave.dir/ufield.cpp.s
 
 CMakeFiles/awave.dir/wave_cpu.cpp.o: CMakeFiles/awave.dir/flags.make
-CMakeFiles/awave.dir/wave_cpu.cpp.o: /home/happikin/uni/semester-2/aspp/aspp-cw2/src/wave_cpu.cpp
+CMakeFiles/awave.dir/wave_cpu.cpp.o: /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/wave_cpu.cpp
 CMakeFiles/awave.dir/wave_cpu.cpp.o: CMakeFiles/awave.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/happikin/uni/semester-2/aspp/aspp-cw2/build-CUDA/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/awave.dir/wave_cpu.cpp.o"
-	/opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/bin/nvc++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/awave.dir/wave_cpu.cpp.o -MF CMakeFiles/awave.dir/wave_cpu.cpp.o.d -o CMakeFiles/awave.dir/wave_cpu.cpp.o -c /home/happikin/uni/semester-2/aspp/aspp-cw2/src/wave_cpu.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/build-CUDA/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/awave.dir/wave_cpu.cpp.o"
+	/opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/bin/nvc++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/awave.dir/wave_cpu.cpp.o -MF CMakeFiles/awave.dir/wave_cpu.cpp.o.d -o CMakeFiles/awave.dir/wave_cpu.cpp.o -c /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/wave_cpu.cpp
 
 CMakeFiles/awave.dir/wave_cpu.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/awave.dir/wave_cpu.cpp.i"
-	/opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/bin/nvc++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/happikin/uni/semester-2/aspp/aspp-cw2/src/wave_cpu.cpp > CMakeFiles/awave.dir/wave_cpu.cpp.i
+	/opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/bin/nvc++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/wave_cpu.cpp > CMakeFiles/awave.dir/wave_cpu.cpp.i
 
 CMakeFiles/awave.dir/wave_cpu.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/awave.dir/wave_cpu.cpp.s"
-	/opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/bin/nvc++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/happikin/uni/semester-2/aspp/aspp-cw2/src/wave_cpu.cpp -o CMakeFiles/awave.dir/wave_cpu.cpp.s
+	/opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/bin/nvc++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/wave_cpu.cpp -o CMakeFiles/awave.dir/wave_cpu.cpp.s
 
 CMakeFiles/awave.dir/wave_cuda.cu.o: CMakeFiles/awave.dir/flags.make
 CMakeFiles/awave.dir/wave_cuda.cu.o: CMakeFiles/awave.dir/includes_CUDA.rsp
-CMakeFiles/awave.dir/wave_cuda.cu.o: /home/happikin/uni/semester-2/aspp/aspp-cw2/src/wave_cuda.cu
+CMakeFiles/awave.dir/wave_cuda.cu.o: /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/wave_cuda.cu
 CMakeFiles/awave.dir/wave_cuda.cu.o: CMakeFiles/awave.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/happikin/uni/semester-2/aspp/aspp-cw2/build-CUDA/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CUDA object CMakeFiles/awave.dir/wave_cuda.cu.o"
-	/opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/bin/nvcc -forward-unknown-to-host-compiler $(CUDA_DEFINES) $(CUDA_INCLUDES) $(CUDA_FLAGS) -MD -MT CMakeFiles/awave.dir/wave_cuda.cu.o -MF CMakeFiles/awave.dir/wave_cuda.cu.o.d -x cu -c /home/happikin/uni/semester-2/aspp/aspp-cw2/src/wave_cuda.cu -o CMakeFiles/awave.dir/wave_cuda.cu.o
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/build-CUDA/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CUDA object CMakeFiles/awave.dir/wave_cuda.cu.o"
+	/opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/bin/nvcc -forward-unknown-to-host-compiler $(CUDA_DEFINES) $(CUDA_INCLUDES) $(CUDA_FLAGS) -MD -MT CMakeFiles/awave.dir/wave_cuda.cu.o -MF CMakeFiles/awave.dir/wave_cuda.cu.o.d -x cu -c /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/wave_cuda.cu -o CMakeFiles/awave.dir/wave_cuda.cu.o
 
 CMakeFiles/awave.dir/wave_cuda.cu.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CUDA source to CMakeFiles/awave.dir/wave_cuda.cu.i"
@@ -155,18 +155,18 @@ CMakeFiles/awave.dir/wave_cuda.cu.s: cmake_force
 	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CUDA_CREATE_ASSEMBLY_SOURCE
 
 CMakeFiles/awave.dir/main.cpp.o: CMakeFiles/awave.dir/flags.make
-CMakeFiles/awave.dir/main.cpp.o: /home/happikin/uni/semester-2/aspp/aspp-cw2/src/main.cpp
+CMakeFiles/awave.dir/main.cpp.o: /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/main.cpp
 CMakeFiles/awave.dir/main.cpp.o: CMakeFiles/awave.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/happikin/uni/semester-2/aspp/aspp-cw2/build-CUDA/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/awave.dir/main.cpp.o"
-	/opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/bin/nvc++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/awave.dir/main.cpp.o -MF CMakeFiles/awave.dir/main.cpp.o.d -o CMakeFiles/awave.dir/main.cpp.o -c /home/happikin/uni/semester-2/aspp/aspp-cw2/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/build-CUDA/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/awave.dir/main.cpp.o"
+	/opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/bin/nvc++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/awave.dir/main.cpp.o -MF CMakeFiles/awave.dir/main.cpp.o.d -o CMakeFiles/awave.dir/main.cpp.o -c /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/main.cpp
 
 CMakeFiles/awave.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/awave.dir/main.cpp.i"
-	/opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/bin/nvc++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/happikin/uni/semester-2/aspp/aspp-cw2/src/main.cpp > CMakeFiles/awave.dir/main.cpp.i
+	/opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/bin/nvc++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/main.cpp > CMakeFiles/awave.dir/main.cpp.i
 
 CMakeFiles/awave.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/awave.dir/main.cpp.s"
-	/opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/bin/nvc++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/happikin/uni/semester-2/aspp/aspp-cw2/src/main.cpp -o CMakeFiles/awave.dir/main.cpp.s
+	/opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/bin/nvc++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/main.cpp -o CMakeFiles/awave.dir/main.cpp.s
 
 # Object files for target awave
 awave_OBJECTS = \
@@ -190,9 +190,9 @@ awave: CMakeFiles/awave.dir/wave_cuda.cu.o
 awave: CMakeFiles/awave.dir/main.cpp.o
 awave: CMakeFiles/awave.dir/build.make
 awave: /usr/lib/x86_64-linux-gnu/hdf5/serial/libhdf5.so
-awave: /opt/openmpi/lib/libmpi.so
+awave: /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/comm_libs/13.0/hpcx/hpcx-2.24/ompi/lib/libmpi.so
 awave: CMakeFiles/awave.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/happikin/uni/semester-2/aspp/aspp-cw2/build-CUDA/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable awave"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/build-CUDA/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable awave"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/awave.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -204,6 +204,6 @@ CMakeFiles/awave.dir/clean:
 .PHONY : CMakeFiles/awave.dir/clean
 
 CMakeFiles/awave.dir/depend:
-	cd /home/happikin/uni/semester-2/aspp/aspp-cw2/build-CUDA && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/happikin/uni/semester-2/aspp/aspp-cw2/src /home/happikin/uni/semester-2/aspp/aspp-cw2/src /home/happikin/uni/semester-2/aspp/aspp-cw2/build-CUDA /home/happikin/uni/semester-2/aspp/aspp-cw2/build-CUDA /home/happikin/uni/semester-2/aspp/aspp-cw2/build-CUDA/CMakeFiles/awave.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/build-CUDA && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/build-CUDA /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/build-CUDA /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/build-CUDA/CMakeFiles/awave.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/awave.dir/depend
 

@@ -1,9 +1,9 @@
-CMakeFiles/awave.dir/wave_cuda.cu.o : /home/happikin/uni/semester-2/aspp/aspp-cw2/src/wave_cuda.cu \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/include/_cplus_macros.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/include/_cplus_preinclude.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/include/_cplus_nvcc.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/cuda_runtime.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/crt/host_config.h \
+CMakeFiles/awave.dir/wave_cuda.cu.o : /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/wave_cuda.cu \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/include/_cplus_macros.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/include/_cplus_preinclude.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/include/_cplus_nvcc.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/cuda_runtime.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/crt/host_config.h \
     /usr/include/features.h \
     /usr/include/features-time64.h \
     /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -14,15 +14,15 @@ CMakeFiles/awave.dir/wave_cuda.cu.o : /home/happikin/uni/semester-2/aspp/aspp-cw
     /usr/include/x86_64-linux-gnu/gnu/stubs.h \
     /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
     /usr/include/c++/13/cstdarg \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/include/bits/c++config.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/include/bits/c++config.h \
     /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
     /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
     /usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h \
     /usr/include/c++/13/pstl/pstl_config.h \
     /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/builtin_types.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/device_types.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/crt/host_defines.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/builtin_types.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/device_types.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/crt/host_defines.h \
     /usr/include/ctype.h \
     /usr/include/x86_64-linux-gnu/bits/types.h \
     /usr/include/x86_64-linux-gnu/bits/typesizes.h \
@@ -31,8 +31,8 @@ CMakeFiles/awave.dir/wave_cuda.cu.o : /home/happikin/uni/semester-2/aspp/aspp-cw
     /usr/include/x86_64-linux-gnu/bits/endianness.h \
     /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
     /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/driver_types.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/vector_types.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/driver_types.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/vector_types.h \
     /usr/lib/gcc/x86_64-linux-gnu/13/include/limits.h \
     /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h \
     /usr/include/limits.h \
@@ -45,20 +45,20 @@ CMakeFiles/awave.dir/wave_cuda.cu.o : /home/happikin/uni/semester-2/aspp/aspp-cw
     /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
     /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
     /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/surface_types.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/texture_types.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/library_types.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/channel_descriptor.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/cuda_runtime_api.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/cuda_device_runtime_api.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/include/stdlib.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/surface_types.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/texture_types.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/library_types.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/channel_descriptor.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/cuda_runtime_api.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/cuda_device_runtime_api.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/include/stdlib.h \
     /usr/include/c++/13/stdlib.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/include/cstdlib \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/include/cstdlib \
     /usr/include/c++/13/cstdlib \
     /usr/include/stdlib.h \
     /usr/include/x86_64-linux-gnu/bits/waitflags.h \
     /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/include/bits/floatn.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/include/bits/floatn.h \
     /usr/include/x86_64-linux-gnu/sys/types.h \
     /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
     /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
@@ -80,14 +80,14 @@ CMakeFiles/awave.dir/wave_cuda.cu.o : /home/happikin/uni/semester-2/aspp/aspp-cw
     /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
     /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
     /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/include/alloca.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/include/alloca.h \
     /usr/include/alloca.h \
     /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
     /usr/include/c++/13/bits/std_abs.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/driver_functions.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/vector_functions.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/vector_functions.hpp \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/crt/common_functions.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/driver_functions.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/vector_functions.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/vector_functions.hpp \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/crt/common_functions.h \
     /usr/include/string.h \
     /usr/include/strings.h \
     /usr/include/time.h \
@@ -107,10 +107,10 @@ CMakeFiles/awave.dir/wave_cuda.cu.o : /home/happikin/uni/semester-2/aspp/aspp-cw
     /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
     /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
     /usr/include/assert.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/crt/math_functions.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/include/math.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/crt/math_functions.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/include/math.h \
     /usr/include/c++/13/math.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/include/cmath \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/include/cmath \
     /usr/include/c++/13/cmath \
     /usr/include/c++/13/bits/requires_hosted.h \
     /usr/include/c++/13/bits/cpp_type_traits.h \
@@ -150,7 +150,7 @@ CMakeFiles/awave.dir/wave_cuda.cu.o : /home/happikin/uni/semester-2/aspp/aspp-cw
     /usr/include/c++/13/bit \
     /usr/include/c++/13/limits \
     /usr/include/c++/13/tr1/gamma.tcc \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/include/tr1/special_function_util.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/include/tr1/special_function_util.h \
     /usr/include/c++/13/tr1/special_function_util.h \
     /usr/include/c++/13/tr1/bessel_function.tcc \
     /usr/include/c++/13/tr1/beta_function.tcc \
@@ -162,46 +162,46 @@ CMakeFiles/awave.dir/wave_cuda.cu.o : /home/happikin/uni/semester-2/aspp/aspp-cw
     /usr/include/c++/13/tr1/poly_hermite.tcc \
     /usr/include/c++/13/tr1/poly_laguerre.tcc \
     /usr/include/c++/13/tr1/riemann_zeta.tcc \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/crt/math_functions.hpp \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/crt/device_functions.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/crt/device_functions.hpp \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/device_atomic_functions.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/device_atomic_functions.hpp \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/crt/device_double_functions.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/crt/device_double_functions.hpp \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/sm_20_atomic_functions.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/sm_20_atomic_functions.hpp \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/sm_32_atomic_functions.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/sm_32_atomic_functions.hpp \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/sm_35_atomic_functions.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/sm_60_atomic_functions.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/sm_60_atomic_functions.hpp \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/sm_20_intrinsics.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/sm_20_intrinsics.hpp \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/sm_30_intrinsics.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/sm_30_intrinsics.hpp \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/sm_32_intrinsics.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/sm_32_intrinsics.hpp \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/sm_35_intrinsics.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/sm_61_intrinsics.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/sm_61_intrinsics.hpp \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/crt/sm_70_rt.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/crt/sm_70_rt.hpp \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/crt/sm_80_rt.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/crt/sm_80_rt.hpp \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/crt/sm_90_rt.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/crt/sm_90_rt.hpp \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/crt/sm_100_rt.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/crt/sm_100_rt.hpp \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/texture_indirect_functions.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/surface_indirect_functions.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/crt/cudacc_ext.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/device_launch_parameters.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/crt/math_functions.hpp \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/crt/device_functions.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/crt/device_functions.hpp \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/device_atomic_functions.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/device_atomic_functions.hpp \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/crt/device_double_functions.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/crt/device_double_functions.hpp \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/sm_20_atomic_functions.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/sm_20_atomic_functions.hpp \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/sm_32_atomic_functions.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/sm_32_atomic_functions.hpp \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/sm_35_atomic_functions.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/sm_60_atomic_functions.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/sm_60_atomic_functions.hpp \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/sm_20_intrinsics.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/sm_20_intrinsics.hpp \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/sm_30_intrinsics.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/sm_30_intrinsics.hpp \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/sm_32_intrinsics.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/sm_32_intrinsics.hpp \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/sm_35_intrinsics.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/sm_61_intrinsics.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/sm_61_intrinsics.hpp \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/crt/sm_70_rt.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/crt/sm_70_rt.hpp \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/crt/sm_80_rt.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/crt/sm_80_rt.hpp \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/crt/sm_90_rt.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/crt/sm_90_rt.hpp \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/crt/sm_100_rt.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/crt/sm_100_rt.hpp \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/texture_indirect_functions.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/surface_indirect_functions.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/crt/cudacc_ext.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/device_launch_parameters.h \
     /usr/include/c++/13/utility \
     /usr/include/c++/13/bits/stl_relops.h \
     /usr/include/c++/13/initializer_list \
-    /home/happikin/uni/semester-2/aspp/aspp-cw2/src/wave_cuda.h \
-    /home/happikin/uni/semester-2/aspp/aspp-cw2/src/wave_cpu.h \
+    /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/wave_cuda.h \
+    /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/wave_cpu.h \
     /usr/include/c++/13/filesystem \
     /usr/include/c++/13/bits/fs_fwd.h \
     /usr/include/c++/13/system_error \
@@ -250,7 +250,7 @@ CMakeFiles/awave.dir/wave_cuda.cu.o : /home/happikin/uni/semester-2/aspp/aspp-cw
     /usr/include/c++/13/bits/range_access.h \
     /usr/include/c++/13/bits/basic_string.h \
     /usr/include/c++/13/ext/alloc_traits.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/include/bits/alloc_traits.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/include/bits/alloc_traits.h \
     /usr/include/c++/13/bits/alloc_traits.h \
     /usr/include/c++/13/string_view \
     /usr/include/c++/13/bits/functional_hash.h \
@@ -333,9 +333,9 @@ CMakeFiles/awave.dir/wave_cuda.cu.o : /home/happikin/uni/semester-2/aspp/aspp-cw
     /usr/include/c++/13/bits/stl_uninitialized.h \
     /usr/include/c++/13/bits/fs_dir.h \
     /usr/include/c++/13/bits/fs_ops.h \
-    /home/happikin/uni/semester-2/aspp/aspp-cw2/src/ndarray.h \
+    /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/ndarray.h \
     /usr/include/c++/13/array \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/include/memory \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/include/memory \
     /usr/include/c++/13/memory \
     /usr/include/c++/13/bits/stl_tempbuf.h \
     /usr/include/c++/13/bits/stl_raw_storage_iter.h \
@@ -361,31 +361,34 @@ CMakeFiles/awave.dir/wave_cuda.cu.o : /home/happikin/uni/semester-2/aspp/aspp-cw
     /usr/include/c++/13/backward/auto_ptr.h \
     /usr/include/c++/13/bits/ranges_uninitialized.h \
     /usr/include/c++/13/bits/ranges_algobase.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/include/pstl/glue_memory_defs.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/include/nvhpc/pstl_config.hpp \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/include/numeric \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/include/pstl/glue_memory_defs.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/include/nvhpc/pstl_config.hpp \
+    /usr/include/c++/13/pstl/glue_memory_defs.h \
+    /usr/include/c++/13/pstl/execution_defs.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/include/numeric \
     /usr/include/c++/13/numeric \
     /usr/include/c++/13/bits/stl_numeric.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/compilers/include/pstl/glue_numeric_defs.h \
-    /home/happikin/uni/semester-2/aspp/aspp-cw2/src/h5io.h \
-    /home/happikin/uni/semester-2/aspp/aspp-cw2/src/params.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/compilers/include/pstl/glue_numeric_defs.h \
+    /usr/include/c++/13/pstl/glue_numeric_defs.h \
+    /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/h5io.h \
+    /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/params.h \
     /usr/include/c++/13/format \
     /usr/include/c++/13/charconv \
     /usr/include/c++/13/optional \
     /usr/include/c++/13/bits/enable_special_members.h \
     /usr/include/c++/13/span \
     /usr/include/c++/13/variant \
-    /home/happikin/uni/semester-2/aspp/aspp-cw2/src/parallel.h \
-    /opt/openmpi/include/mpi.h \
-    /opt/openmpi/include/mpi_portable_platform.h \
-    /home/happikin/uni/semester-2/aspp/aspp-cw2/src/ufield.h \
-    /home/happikin/uni/semester-2/aspp/aspp-cw2/src/util.h \
+    /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/parallel.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/comm_libs/13.0/hpcx/hpcx-2.24/ompi/include/mpi.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/comm_libs/13.0/hpcx/hpcx-2.24/ompi/include/mpi_portable_platform.h \
+    /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/ufield.h \
+    /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/util.h \
     /usr/include/c++/13/iostream \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/nvtx3/nvtx3.hpp \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/nvtx3/nvToolsExt.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/nvtx3/nvtxDetail/nvtxLinkOnce.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/nvtx3/nvtxDetail/nvtxTypes.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/nvtx3/nvtxDetail/nvtxImpl.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/nvtx3/nvtx3.hpp \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/nvtx3/nvToolsExt.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/nvtx3/nvtxDetail/nvtxLinkOnce.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/nvtx3/nvtxDetail/nvtxTypes.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/nvtx3/nvtxDetail/nvtxImpl.h \
     /usr/include/dlfcn.h \
     /usr/include/x86_64-linux-gnu/bits/dlfcn.h \
     /usr/include/x86_64-linux-gnu/bits/dl_find_object.h \
@@ -396,7 +399,7 @@ CMakeFiles/awave.dir/wave_cuda.cu.o : /home/happikin/uni/semester-2/aspp/aspp-cw
     /usr/include/linux/falloc.h \
     /usr/include/x86_64-linux-gnu/bits/stat.h \
     /usr/include/x86_64-linux-gnu/bits/struct_stat.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/nvtx3/nvtxDetail/nvtxInitDecls.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/nvtx3/nvtxDetail/nvtxImplCore.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/nvtx3/nvtxDetail/nvtxInitDefs.h \
-    /opt/nvidia/hpc_sdk/Linux_x86_64/25.11/cuda/13.0/include/nvtx3/nvtxDetail/nvtxInit.h
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/nvtx3/nvtxDetail/nvtxInitDecls.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/nvtx3/nvtxDetail/nvtxImplCore.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/nvtx3/nvtxDetail/nvtxInitDefs.h \
+    /opt/nvidia/hpc_sdk/Linux_x86_64/25.9/cuda/13.0/include/nvtx3/nvtxDetail/nvtxInit.h

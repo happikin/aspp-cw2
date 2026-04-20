@@ -1,4 +1,4 @@
-# Install script for directory: /home/happikin/uni/semester-2/aspp/aspp-cw2/src
+# Install script for directory: /home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/happikin/uni/semester-2/aspp/aspp-cw2/build-CUDA/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/build-CUDA/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
