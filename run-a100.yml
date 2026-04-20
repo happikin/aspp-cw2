@@ -2,16 +2,20 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   generateName: awave-a100-
+  labels:
+    eidf/user: s2824305-epcc
+    kueue.x-k8s.io/max-exec-time-seconds: "300"
+    kueue.x-k8s.io/queue-name: eidf018ns-profiling-queue
+
 spec:
   completions: 1
-  backoffLimit: 1
+  backoffLimit: 0
   ttlSecondsAfterFinished: 180
   template:
     metadata:
-      name: awave-a100-pod
       labels:
-        kueue.x-k8s.io/max-exec-time-seconds: "300"
-        kueue.x-k8s.io/queue-name: eidf018ns-profiling-queue
+        eidf/user: s2824305-epcc
+
     spec:
       activeDeadlineSeconds: 300
       containers:
@@ -27,13 +31,13 @@ spec:
             ${KGPU_JOB_NAME} > ${KGPU_JOB_NAME}.log 2>&1
         resources:
           requests:
-            cpu: 4
-            memory: 32Gi
+            cpu: 1
+            memory: 64Gi
             nvidia.com/gpu: 1
           limits:
             cpu: 8
-            memory: 32Gi
-            nvidia.com/gpu: 1
+            memory: 80Gi
+            nvidia.com/gpu: 8
       restartPolicy: Never
       nodeSelector:
         nvidia.com/gpu.product: NVIDIA-A100-SXM4-80GB

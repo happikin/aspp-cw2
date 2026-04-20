@@ -2,6 +2,10 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   generateName: awave-a100-n256-g4-
+  labels:
+    eidf/user: s2824305-epcc
+    kueue.x-k8s.io/max-exec-time-seconds: "300"
+    kueue.x-k8s.io/queue-name: eidf018ns-profiling-queue
 
 spec:
   completions: 1
@@ -9,10 +13,8 @@ spec:
   ttlSecondsAfterFinished: 180
   template:
     metadata:
-      name: awave-pod
       labels:
-        kueue.x-k8s.io/max-exec-time-seconds: "300"
-        kueue.x-k8s.io/queue-name: eidf018ns-profiling-queue
+        eidf/user: s2824305-epcc
 
     spec:
       activeDeadlineSeconds: 300
