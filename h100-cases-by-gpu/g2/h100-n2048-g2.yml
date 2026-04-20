@@ -1,0 +1,46 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  generateName: awave-h100-n2048-g2-
+spec:
+  completions: 1
+  backoffLimit: 0
+  ttlSecondsAfterFinished: 1800
+  template:
+    metadata:
+      name: awave-h100-pod
+      labels:
+        kueue.x-k8s.io/max-exec-time-seconds: "7200"
+        kueue.x-k8s.io/queue-name: eidf018ns-profiling-queue
+    spec:
+      activeDeadlineSeconds: 7200
+      restartPolicy: Never
+      volumes:
+        - name: dshm
+          emptyDir:
+            medium: Memory
+            sizeLimit: 32Gi
+      containers:
+        - name: run
+          image: $container
+          resources:
+            requests:
+              cpu: 8
+              memory: 64Gi
+              nvidia.com/gpu: 2
+            limits:
+              cpu: 8
+              memory: 64Gi
+              nvidia.com/gpu: 2
+          volumeMounts:
+            - name: dshm
+              mountPath: /dev/shm
+          command: ["bash", "-c"]
+          args:
+            - |-
+              set -euo pipefail
+              cd ${KGPU_SUBMIT_DIR}
+              mkdir -p results/h100/g2
+              mpirun -n 2 -mca coll ^hcoll ./build-CUDA/awave -mpi 2,1,1 -shape 2048,2048,2048 -nsteps 100 -out_period 100 -skip_cpu 1 -json results/h100/g2/n2048_g2.json ${KGPU_JOB_NAME} 2>&1 | tee results/h100/g2/n2048_g2.log
+      nodeSelector:
+        nvidia.com/gpu.product: NVIDIA-H100-80GB-HBM3
