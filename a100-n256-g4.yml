@@ -6,13 +6,16 @@ metadata:
 spec:
   completions: 1
   backoffLimit: 0
-  ttlSecondsAfterFinished: 1800
+  ttlSecondsAfterFinished: 180
   template:
     metadata:
       name: awave-pod
+      labels:
+        kueue.x-k8s.io/max-exec-time-seconds: "300"
+        kueue.x-k8s.io/queue-name: eidf018ns-profiling-queue
 
     spec:
-      activeDeadlineSeconds: 1800
+      activeDeadlineSeconds: 300
       restartPolicy: Never
       nodeSelector:
         nvidia.com/gpu.product: NVIDIA-A100-SXM4-80GB
@@ -33,4 +36,4 @@ spec:
               set -euo pipefail
               cd ${KGPU_SUBMIT_DIR}
               mkdir -p results/a100
-              mpirun -n 4 build-CUDA/awave -shape 256,256,256 -mpi 2,2,1 -nsteps 100 -out_period 100 -skip_cpu 1 -json results/a100/n256_g4.json ${KGPU_JOB_NAME} 2>&1 | tee results/a100/n256_g4.log
+              mpirun -n 4 -mca coll ^hcoll build-CUDA/awave -shape 256,256,256 -mpi 2,2,1 -nsteps 100 -out_period 100 -skip_cpu 1 -json results/a100/n256_g4.json ${KGPU_JOB_NAME} 2>&1 | tee results/a100/n256_g4.log

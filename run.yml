@@ -18,7 +18,8 @@ spec:
           - bash
           - -c
           - >-
-            ${KGPU_SUBMIT_DIR}/build-CUDA/awave
+            cd ${KGPU_SUBMIT_DIR} &&
+            mpirun -n 1 -mca coll ^hcoll ./build-CUDA/awave
             -mpi 1,1,1 -shape 1024,1024,1024 -nsteps 100 -out_period 100
             ${KGPU_JOB_NAME} > ${KGPU_JOB_NAME}.log 2>&1
         resources:
