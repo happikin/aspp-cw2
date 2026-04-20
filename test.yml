@@ -5,12 +5,12 @@ metadata:
 spec:
   completions: 1
   backoffLimit: 1
-  ttlSecondsAfterFinished: 1800
+  ttlSecondsAfterFinished: 900
   template:
     metadata:
       name: awave-pod
     spec:
-      activeDeadlineSeconds: 1800
+      activeDeadlineSeconds: 3200
       containers:
       - name: run
         image: $container
@@ -21,20 +21,20 @@ spec:
             exec > >(tee "$(KGPU_SUBMIT_DIR)/$(KGPU_JOB_NAME).log") 2>&1
             set -e
             echo "=== shape 1024^3 on 4 GPUs ==="
-            mpirun -np 4 -mca coll ^hcoll \
+            mpirun -np 8 -mca coll ^hcoll \
               "$(KGPU_SUBMIT_DIR)/build-CUDA/awave" \
-              -mpi 2,2,1 -shape 512,512,512 \
-              -json "$(KGPU_SUBMIT_DIR)/$(KGPU_JOB_NAME).json" \
-              "$(KGPU_JOB_NAME)"
+              -mpi 2,2,2 -shape 1024,1024,1024 \
+              "$(KGPU_JOB_NAME)" \
+            && nvidia-smi
         resources:
           requests:
             cpu: 8
-            memory: 128Gi
-            nvidia.com/gpu: 4
+            memory: 256Gi
+            nvidia.com/gpu: 8
           limits:
             cpu: 8
-            memory: 128Gi
-            nvidia.com/gpu: 4
+            memory: 256Gi
+            nvidia.com/gpu: 8
       restartPolicy: Never
       nodeSelector:
-        nvidia.com/gpu.product: NVIDIA-A100-SXM4-80GB
+        nvidia.com/gpu.product: NVIDIA-H100-80GB-HBM3

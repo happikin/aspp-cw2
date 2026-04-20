@@ -1,0 +1,73 @@
+=== shape 1024^3 on 4 GPUs ===
+ASPP wave simulator starting
+Process geometry: [2, 1, 1]
+Initialising CPU simulation from parameters...
+Grid shape: [1024, 1024, 1024]
+Grid spacing: 10 m
+Time step: 0.002 s
+Number of steps: 100
+Output period: 10
+Initial pressure field is pulse in middle of domain
+Speed of sound is simple ocean depth model
+Damping field to avoid reflections in x & y directions (large quiet ocean)
+IO off, skipping
+Initialising CUDA simulation as copy of CPU...
+IO off, skipping
+Starting run with CPU, timing in 10 chunks
+Chunk 0, length = 10, time = 32.62261 s
+Chunk 1, length = 10, time = 32.768612 s
+Chunk 2, length = 10, time = 32.747124 s
+Chunk 3, length = 10, time = 32.415382 s
+Chunk 4, length = 10, time = 32.339314 s
+Chunk 5, length = 10, time = 33.47099 s
+Chunk 6, length = 10, time = 36.160675 s
+Chunk 7, length = 10, time = 35.93093 s
+Chunk 8, length = 10, time = 35.686024 s
+Chunk 9, length = 10, time = 35.87006 s
+Starting run with CUDA, timing in 10 chunks
+Chunk 0, length = 10, time = 1.7982125 s
+Chunk 1, length = 10, time = 1.7744315 s
+Chunk 2, length = 10, time = 1.7815771 s
+Chunk 3, length = 10, time = 1.8047578 s
+Chunk 4, length = 10, time = 1.745706 s
+Chunk 5, length = 10, time = 1.734992 s
+Chunk 6, length = 10, time = 1.7340443 s
+Chunk 7, length = 10, time = 1.7323579 s
+Chunk 8, length = 10, time = 1.7296259 s
+Chunk 9, length = 10, time = 1.7318902 s
+Checking CUDA results...
+Number of differences detected = 0
+Summary for CPU
+Run time / seconds
+min = 3.234e+01, max = 3.616e+01, mean = 3.400e+01, std = 1.676e+00
+Performance / (site updates per second)
+min = 2.969e+08, max = 3.320e+08, mean = 3.165e+08, std = 1.536e+07
+Summary for CUDA
+Run time / seconds
+min = 1.730e+00, max = 1.805e+00, mean = 1.757e+00, std = 2.984e-02
+Performance / (site updates per second)
+min = 5.950e+09, max = 6.208e+09, mean = 6.114e+09, std = 1.029e+08
+Mon Apr 20 13:00:38 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.124.06             Driver Version: 570.124.06     CUDA Version: 13.0     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H100 80GB HBM3          Off |   00000000:05:00.0 Off |                    0 |
+| N/A   38C    P0            116W /  700W |       1MiB /  81559MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA H100 80GB HBM3          Off |   00000000:0A:00.0 Off |                    0 |
+| N/A   34C    P0            119W /  700W |       1MiB /  81559MiB |      1%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+

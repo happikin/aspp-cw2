@@ -1,0 +1,11 @@
+=== shape 1024^3 on 4 GPUs ===
+ASPP wave simulator starting
+Process geometry: [2, 1, 1]
+Initialising CPU simulation from parameters...
+Grid shape: [2048, 2048, 2048]
+Grid spacing: 10 m
+Time step: 0.002 s
+Number of steps: 100
+Output period: 10
+Initial pressure field is pulse in middle of domain
+Speed of sound is simple ocean depth model

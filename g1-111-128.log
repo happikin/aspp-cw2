@@ -1,0 +1,69 @@
+=== shape 1024^3 on 4 GPUs ===
+ASPP wave simulator starting
+Process geometry: [1, 1, 1]
+Initialising CPU simulation from parameters...
+Grid shape: [128, 128, 128]
+Grid spacing: 10 m
+Time step: 0.002 s
+Number of steps: 100
+Output period: 10
+Initial pressure field is pulse in middle of domain
+Speed of sound is simple ocean depth model
+Damping field to avoid reflections in x & y directions (large quiet ocean)
+IO off, skipping
+Initialising CUDA simulation as copy of CPU...
+IO off, skipping
+Starting run with CPU, timing in 10 chunks
+Chunk 0, length = 10, time = 0.057718325 s
+Chunk 1, length = 10, time = 0.047285017 s
+Chunk 2, length = 10, time = 0.04794822 s
+Chunk 3, length = 10, time = 0.04710182 s
+Chunk 4, length = 10, time = 0.04725235 s
+Chunk 5, length = 10, time = 0.04704605 s
+Chunk 6, length = 10, time = 0.047153156 s
+Chunk 7, length = 10, time = 0.046946965 s
+Chunk 8, length = 10, time = 0.04669327 s
+Chunk 9, length = 10, time = 0.047126308 s
+Starting run with CUDA, timing in 10 chunks
+Chunk 0, length = 10, time = 0.004088404 s
+Chunk 1, length = 10, time = 0.003374177 s
+Chunk 2, length = 10, time = 0.003244227 s
+Chunk 3, length = 10, time = 0.003292172 s
+Chunk 4, length = 10, time = 0.003269905 s
+Chunk 5, length = 10, time = 0.003263017 s
+Chunk 6, length = 10, time = 0.003362584 s
+Chunk 7, length = 10, time = 0.003337945 s
+Chunk 8, length = 10, time = 0.003323611 s
+Chunk 9, length = 10, time = 0.003303256 s
+Checking CUDA results...
+Number of differences detected = 0
+Summary for CPU
+Run time / seconds
+min = 4.669e-02, max = 5.772e-02, mean = 4.823e-02, std = 3.350e-03
+Performance / (site updates per second)
+min = 3.633e+08, max = 4.491e+08, mean = 4.365e+08, std = 2.587e+07
+Summary for CUDA
+Run time / seconds
+min = 3.244e-03, max = 4.088e-03, mean = 3.386e-03, std = 2.505e-04
+Performance / (site updates per second)
+min = 5.130e+09, max = 6.464e+09, mean = 6.220e+09, std = 3.917e+08
+Mon Apr 20 12:04:05 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.124.06             Driver Version: 570.124.06     CUDA Version: 13.0     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H100 80GB HBM3          Off |   00000000:0A:00.0 Off |                    0 |
+| N/A   33C    P0            146W /  700W |       1MiB /  81559MiB |     22%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+

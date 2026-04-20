@@ -1,0 +1,32 @@
+=== shape 1024^3 on 4 GPUs ===
+[1776685551.072023] [awave-76m7d-cg986:62   :0]          parser.c:2363 UCX  WARN  unused environment variable: UCX_CUDA_IPC_ENABLE_MNNVL
+[1776685551.072023] [awave-76m7d-cg986:62   :0]          parser.c:2363 UCX  WARN  (set UCX_WARN_UNUSED_ENV_VARS=n to suppress this warning)
+[1776685551.072088] [awave-76m7d-cg986:61   :0]          parser.c:2363 UCX  WARN  unused environment variable: UCX_CUDA_IPC_ENABLE_MNNVL
+[1776685551.072088] [awave-76m7d-cg986:61   :0]          parser.c:2363 UCX  WARN  (set UCX_WARN_UNUSED_ENV_VARS=n to suppress this warning)
+ASPP wave simulator starting
+Process geometry: [2, 1, 1]
+Initialising CPU simulation from parameters...
+Grid shape: [128, 128, 128]
+Grid spacing: 10 m
+Time step: 0.002 s
+Number of steps: 100
+Output period: 10
+Initial pressure field is pulse in middle of domain
+Speed of sound is simple ocean depth model
+Damping field to avoid reflections in x & y directions (large quiet ocean)
+IO off, skipping
+Initialising CUDA simulation as copy of CPU...
+IO off, skipping
+/home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/wave_cuda.cu:397 CUDA error: system has unsupported display driver / cuda driver combination
+/home/eidf018/eidf018/shared/s2824305-epcc-pvc/cw2/aspp-cw2/src/wave_cuda.cu:397 CUDA error: system has unsupported display driver / cuda driver combination
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[1130,1],0]
+  Exit code:    1
+--------------------------------------------------------------------------
